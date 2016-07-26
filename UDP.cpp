@@ -114,7 +114,7 @@ namespace Socket
         if (len > (SOCKET_MAX_BUFFER_LEN * sizeof(T)))
         {
             stringstream error;
-            error << "[send] with [buffer=" << data << "] [len=" << len << "] Data length higher then max buffer length";
+            error << "[receive] with [buffer=" << data << "] [len=" << len << "] Data length higher then max buffer length";
             throw SocketException(error.str());
         }
 
