@@ -114,8 +114,8 @@ namespace Socket
     template <class T>
     int TCP::receive(T* buffer, size_t len)
     {
-        if (!this->_binded) throw SocketException("[send_file] Socket not binded");
-        if (!this->_opened) throw SocketException("[send_file] Socket not opened");
+        if (!this->_binded) throw SocketException("[receive] Socket not binded");
+        if (!this->_opened) throw SocketException("[receive] Socket not opened");
         
         len *= sizeof(T);
         if (len > (SOCKET_MAX_BUFFER_LEN * sizeof(T)))
@@ -126,7 +126,7 @@ namespace Socket
         }
         
         int ret;
-        if ((ret = recv(this->_socket_id, (char *)buffer, len, 0)) == -1) throw SocketException("[send] Cannot receive");
+        if ((ret = recv(this->_socket_id, (char *)buffer, len, 0)) == -1) throw SocketException("[receive] Cannot receive");
         return ret;
     }
     
@@ -176,7 +176,7 @@ namespace Socket
         if (!fp.is_open())
         {
             stringstream error;
-            error << "[send_file] with [filename=" << file_name << "] Cannot open the file";
+            error << "[receive_file] with [filename=" << file_name << "] Cannot open the file";
             throw SocketException(error.str());
         }
         
