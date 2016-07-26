@@ -21,10 +21,6 @@
  * Boston, MA  02110-1301  USA
  */
 
-#ifndef _COMMON_SOCKET_CPP_
-
-#define _COMMON_SOCKET_CPP_
-
 #include "Socket.hpp"
 
 namespace Socket
@@ -112,5 +108,3 @@ namespace Socket
         this->_binded = true;
     }
 }
-
-#endif

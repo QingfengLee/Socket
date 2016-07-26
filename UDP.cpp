@@ -21,10 +21,6 @@
  * Boston, MA  02110-1301  USA
  */
 
-#ifndef _UDP_CPP_
-
-#define _UDP_CPP_
-
 #include "Socket.hpp"
 
 namespace Socket
@@ -186,5 +182,3 @@ namespace Socket
         return ret;
     }
 }
-
-#endif

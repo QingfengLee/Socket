@@ -21,9 +21,6 @@
  * Boston, MA  02110-1301  USA
  */
 
-#ifndef _DATAGRAM_CPP_
-
-#define _DATAGRAM_CPP_
 
 #include "Socket.hpp"
 
@@ -37,5 +34,3 @@ namespace Socket
         this->data = datagram.data;
     }
 }
-
-#endif

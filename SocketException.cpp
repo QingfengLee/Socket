@@ -21,9 +21,6 @@
  * Boston, MA  02110-1301  USA
  */
 
-#ifndef _SOCKETEXCEPTION_CPP_
-
-#define _SOCKETEXCEPTION_CPP_
 
 #include "Socket.hpp"
 
@@ -49,5 +46,3 @@ namespace Socket
         return out;
     }
 }
-
-#endif

@@ -21,10 +21,6 @@
  * Boston, MA  02110-1301  USA
  */
 
-#ifndef _TCP_CPP_
-
-#define _TCP_CPP_
-
 #include "Socket.hpp"
 
 namespace Socket
@@ -55,7 +51,7 @@ namespace Socket
         return Address(this->_address);
     }
     
-    void TCP::listen_on_port(Port port, unsigned int listeners = 1)
+    void TCP::listen_on_port(Port port, unsigned int listeners/* = 1*/)
     {
         CommonSocket::listen_on_port(port);
         
@@ -130,7 +126,7 @@ namespace Socket
         }
         
         int ret;
-        if ((ret = recv(this->_socket_id, buffer, len, 0)) == -1) throw SocketException("[send] Cannot receive");
+        if ((ret = recv(this->_socket_id, (char *)buffer, len, 0)) == -1) throw SocketException("[send] Cannot receive");
         return ret;
     }
     
@@ -203,5 +199,3 @@ namespace Socket
         fp.close();
     }
 }
-
-#endif

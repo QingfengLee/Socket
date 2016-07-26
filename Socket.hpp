@@ -22,7 +22,6 @@
  */
 
 #ifndef _SOCKET_HPP_
-
 #define _SOCKET_HPP_
 
 #include <iostream>
@@ -32,7 +31,7 @@
 #include <vector>
 #include <fstream>
 
-#if defined __WIN32 || defined __WIN64
+#if defined _WIN32 || defined _WIN64
     #define WINDOWS
 #endif
 
@@ -55,7 +54,7 @@ namespace Socket
     typedef string Ip;
     typedef unsigned int Port;
 #ifdef WINDOWS
-    typedef unsigned int socklen_t;
+    typedef int socklen_t;
 #endif
     
     class SocketException : public exception
@@ -163,7 +162,7 @@ namespace Socket
         Port port(void);
         Address address(void);
         
-        void listen_on_port(Port, unsigned int);
+        void listen_on_port(Port, unsigned int listeners = 1);
         void connect_to(Address);
         
         TCP accept_client(void);
@@ -175,13 +174,6 @@ namespace Socket
         void receive_file(string);
     };
 }
-
-#include "SocketException.cpp"
-#include "CommonSocket.cpp"
-#include "Datagram.cpp"
-#include "Address.cpp"
-#include "UDP.cpp"
-#include "TCP.cpp"
 
 #endif
 
