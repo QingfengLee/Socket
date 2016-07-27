@@ -144,8 +144,8 @@ namespace Socket
         template <class T> int send(Address, vector<T>);
         
         template <class T> int receive(Address*, T*, size_t, unsigned int*);
-        template <class T> Datagram<T*> receive(T*, size_t);
-        template <class T, size_t N> Datagram<T[N]> receive(size_t);
+        template <class T> Datagram<T*> receive(T*, size_t = SOCKET_MAX_BUFFER_LEN);
+        template <class T, size_t N> Datagram<T[N]> receive(size_t = N);
         template <class T> Datagram<T> receive(void);
         template <class T> Datagram<vector<T> > receive(size_t);
     };
