@@ -162,7 +162,7 @@ namespace Socket
         Port port(void);
         Address address(void);
         
-        void listen_on_port(Port, unsigned int listeners = 1);
+        void listen_on_port(Port, unsigned int = 1);
         void connect_to(Address);
         
         TCP accept_client(void);
